@@ -3,7 +3,7 @@
         "paths": {
             "*": ["site/client/src/*"],
             "modules/crm/*": ["site/client/modules/crm/src/*"],
-            "modules/{@nameHyphen}/*": ["src/files/client/custom/modules/{@nameHyphen}/src/*"]
+            "modules/account-email-history/*": ["src/files/client/custom/modules/account-email-history/src/*"]
         },
         "module": "ES6",
         "target": "ES2018"

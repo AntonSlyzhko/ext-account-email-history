@@ -1,14 +1,14 @@
 {
-    "module": "{@name}",
-    "name": "{@nameLabel}",
-    "description": "{@description}",
-    "author": "{@author}",
-    "bundled": {@bundled},
+    "module": "AccountEmailHistory",
+    "name": "Account Email History",
+    "description": "Grants account-based access to related email history.",
+    "author": "Anton Slyzhko",
+    "bundled": true,
     "acceptableVersions": [
-        ">=7.3.0"
+        ">=9.1.0"
     ],
     "php": [
-        ">=7.2"
+        ">=8.2"
     ],
     "scripts": []
 }
