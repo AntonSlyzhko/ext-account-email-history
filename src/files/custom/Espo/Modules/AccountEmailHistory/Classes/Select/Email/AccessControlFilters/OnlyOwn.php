@@ -5,7 +5,6 @@ namespace Espo\Modules\AccountEmailHistory\Classes\Select\Email\AccessControlFil
 use Espo\Classes\Select\Email\AccessControlFilters\OnlyOwn as CoreOnlyOwn;
 use Espo\Classes\Select\Email\Helpers\JoinHelper;
 use Espo\Core\Acl;
-use Espo\Core\Name\Field;
 use Espo\Core\Select\AccessControl\Filter;
 use Espo\Core\Select\SelectBuilderFactory;
 use Espo\Entities\Email;
@@ -43,22 +42,16 @@ class OnlyOwn implements Filter
                     Cond::column(Email::ALIAS_INBOX . '.userId'),
                     $this->user->getId()
                 ),
-                Cond::and(
-                    Cond::equal(
-                        Cond::column(Field::PARENT . 'Type'),
-                        Account::ENTITY_TYPE
-                    ),
-                    Cond::in(
-                        Cond::column(Field::PARENT . 'Id'),
-                        $this->selectBuilderFactory
-                            ->create()
-                            ->forUser($this->user)
-                            ->from(Account::ENTITY_TYPE)
-                            ->withAccessControlFilter()
-                            ->buildQueryBuilder()
-                            ->select([Attribute::ID])
-                            ->build()
-                    )
+                Cond::in(
+                    Cond::column('accountId'),
+                    $this->selectBuilderFactory
+                        ->create()
+                        ->forUser($this->user)
+                        ->from(Account::ENTITY_TYPE)
+                        ->withAccessControlFilter()
+                        ->buildQueryBuilder()
+                        ->select([Attribute::ID])
+                        ->build()
                 )
             )
         );
