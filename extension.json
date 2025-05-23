@@ -3,7 +3,7 @@
     "name": "Account Email History",
     "description": "Grants account-based access to related email history.",
     "author": "Anton Slyzhko",
-    "bundled": true,
+    "bundled": false,
     "acceptableVersions": [
         ">=9.1.0"
     ],
