@@ -1,0 +1,6 @@
+{
+    "accessControlFilterClassNameMap": {
+        "onlyOwn": "Espo\\Modules\\AccountEmailHistory\\Classes\\Select\\Email\\AccessControlFilters\\OnlyOwn",
+        "onlyTeam": "Espo\\Modules\\AccountEmailHistory\\Classes\\Select\\Email\\AccessControlFilters\\OnlyTeam"
+    }
+}
